@@ -85,8 +85,14 @@
   font-size: 14px;
   text-transform: uppercase;
   color: #000;
-  -webkit-text-stroke: 1px #fff;
   mix-blend-mode: hard-light;
+}
+
+@supports (-webkit-text-stroke: 1px #fff) or (text-stroke: 1px #fff) {
+  .card-label {
+    -webkit-text-stroke: 1px #fff;
+    text-stroke: 1px #fff;
+  }
 }
 
 .card-text {
@@ -115,7 +121,6 @@
 /* Кнопка Like */
 .button {
   cursor: pointer;
-  background-color: transparent;
   border: 2px solid #000000;
   position: relative;
   overflow: hidden;
@@ -261,7 +266,6 @@
   z-index: 1;
   color: #fff;
   position: relative;
-  width: 2rem;
   justify-self: center;
   width: 28px;
   height: 28px;
@@ -361,6 +365,6 @@
 @media (width >= 1024px) {
   .save_icon {
     width: 21px;
-  height: 21px;
+    height: 21px;
   }
 }
